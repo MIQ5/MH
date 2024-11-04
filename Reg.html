@@ -34,7 +34,10 @@
 
         <label for="class">Класс:</label>
         <input type="text" id="class" required placeholder="Например: 5А,11В">
-
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required >
+        
         <label for="gha">GHA:</label>
         <input type="text" id="gha" required placeholder="Например: GHJDJSGSDD">
 
@@ -52,10 +55,11 @@
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const classValue = document.getElementById('class').value;
+    const email = document.getElementById('email').value;
     const ghaValue = document.getElementById('gha').value;
 
     // Формируем текст сообщения
-    const message = `Имя: ${firstName}\nФамилия: ${lastName}\nКласс: ${classValue}\nGHA: ${ghaValue}`;
+    const message = `Имя: ${firstName}\nФамилия: ${lastName}\nКласс: ${classValue}\nGHA: ${ghaValue}\nemail: ${email}`;
 
     // Отправка данных в Telegram
     const token = '7647185673:AAHqev9fP1WOJA-b9x66tQ2gSr-DT4sYQDw'; // Замените на токен вашего бота
